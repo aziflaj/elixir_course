@@ -17,7 +17,7 @@ defmodule Cards do
 
   def shuffle(deck) do
     deck
-      |> Enum.shuffle
+    |> Enum.shuffle
   end
 
   @doc """
@@ -32,7 +32,7 @@ defmodule Cards do
   """
   def contains?(deck, hand) do
     deck
-      |> Enum.member?(hand)
+    |> Enum.member?(hand)
   end
 
   @doc """
@@ -49,7 +49,7 @@ defmodule Cards do
   """
   def deal(deck, count) do
     deck
-      |> Enum.split(count) # returns a tuple {dealed hand, rest of deck}
+    |> Enum.split(count) # returns a tuple {dealed hand, rest of deck}
   end
 
   def save(deck, filename) do
@@ -66,7 +66,7 @@ defmodule Cards do
 
   def create_hand(hand_size) do
     Cards.create_deck
-      |> Cards.shuffle
-      |> Cards.deal(hand_size)
+    |> Cards.shuffle
+    |> Cards.deal(hand_size)
   end
 end
