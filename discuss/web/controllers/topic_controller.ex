@@ -22,7 +22,9 @@ defmodule Discuss.TopicController do
         |> redirect(to: topic_path(conn, :index))
 
       {:error, changeset} ->
-        render conn, "new.html", changeset: changeset
+        conn
+        |> put_flash(:error, "Something went wrong")
+        |> render("new.html", changeset: changeset)
     end
   end
 end
